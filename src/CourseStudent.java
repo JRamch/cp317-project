@@ -4,21 +4,26 @@
  */
 
  public class CourseStudent extends Student {
-    private String courseCode;   
+    private String courseCode;
     private double test1, test2, test3, finalExam;
 
-    //Constructor
-    public CourseStudent(String studentID, String studentName, String courseCode, 
+    //Constructor with validation
+    public CourseStudent(String studentID, String studentName, String courseCode,
                          double test1, double test2, double test3, double finalExam) {
         super(studentID, studentName);  //Call to parent constructor
         this.courseCode = courseCode;
+
+        if (!isValidTestScore(test1) || !isValidTestScore(test2) || !isValidTestScore(test3) || !isValidTestScore(finalExam)) {
+            throw new IllegalArgumentException("Invalid test scores for Student ID: " + studentID); //Check if any test score is not valid
+        }
+
         this.test1 = test1;
         this.test2 = test2;
         this.test3 = test3;
         this.finalExam = finalExam;
     }
 
-    //Getters and Setters
+    // Getters and setters
     public String getCourseCode() {
         return courseCode;
     }
@@ -57,6 +62,12 @@
 
     public void setFinalExam(double finalExam) {
         this.finalExam = finalExam;
+    }
+
+    //Validation for test scores
+    //A test score must be greater than 0, less than 100
+    public static boolean isValidTestScore(double score) {
+        return score > 0 && score <= 100;
     }
 
     //Override abstract method to calculate the final grade
