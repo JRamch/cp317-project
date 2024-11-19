@@ -59,7 +59,7 @@
         this.finalExam = finalExam;
     }
 
-    // Override abstract method to calculate the final grade
+    //Override abstract method to calculate the final grade
     @Override
     public double calculateFinalGrade() {
         return (test1 + test2 + test3) / 3 * 0.6 + finalExam * 0.4;
