@@ -3,29 +3,33 @@
  * Authors: Josh Gelbaum, Drake Martin, Paul Matsialko, Jaden Ramcharan
  */
 
-public abstract class Student {
-    private String studentID;
-    private String studentName;
+ public abstract class Student {
+    private String studentID;   
+    private String studentName;  
 
-    public Student(String studentID, String studentName){
+    //Constructor
+    public Student(String studentID, String studentName) {
         this.studentID = studentID;
         this.studentName = studentName;
     }
 
-    public void setStudentID(String studentID){
+    //Getters and Setters
+    public String getStudentID() {
+        return studentID;
+    }
+
+    public void setStudentID(String studentID) {
         this.studentID = studentID;
     }
 
-    public String getStudentID(){
-        return this.studentID;
+    public String getStudentName() {
+        return studentName;
     }
 
-    public void setStudentName(String studentName){
+    public void setStudentName(String studentName) {
         this.studentName = studentName;
     }
 
-    public String getStudentName(){
-        return this.studentName;
-    }
-
+    //Abstract method to calculate the final grade
+    public abstract double calculateFinalGrade();
 }
