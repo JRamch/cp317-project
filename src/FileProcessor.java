@@ -59,6 +59,8 @@
                  );
                  students.add(student);
              }
+         }catch(Exception e){
+            throw new IOException("File formatted incorrectly");
          }
      }
  
