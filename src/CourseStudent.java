@@ -8,8 +8,7 @@
     private double test1, test2, test3, finalExam;
 
     //Constructor with validation
-    public CourseStudent(String studentID, String studentName, String courseCode,
-                         double test1, double test2, double test3, double finalExam) {
+    public CourseStudent(String studentID, String studentName, String courseCode, double test1, double test2, double test3, double finalExam) {
         super(studentID, studentName);  //Call to parent constructor
         this.courseCode = courseCode;
 

@@ -29,6 +29,7 @@
  
                  nameMap.put(studentID, studentName); //ID -> Name
              }
+             
          }
  
          //Read CourseFile
@@ -59,8 +60,9 @@
                  );
                  students.add(student);
              }
-         }catch(Exception e){
-            throw new IOException("File formatted incorrectly");
+             if (students.size() < (nameMap.size()*2)){
+                throw new IOException("Student's grade missing");
+             }
          }
      }
  
