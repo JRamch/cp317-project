@@ -69,6 +69,11 @@
         return score > 0 && score <= 100;
     }
 
+    //Validation for Course Codes
+    public static boolean isValidCourseCode(String courseCode) {
+        return courseCode.matches("^[A-Za-z]{2}\\d{3}$");
+    }
+
     //Override abstract method to calculate the final grade
     @Override
     public double calculateFinalGrade() {
